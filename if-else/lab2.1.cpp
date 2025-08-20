@@ -10,10 +10,10 @@ int main() {
     cout << "Please enter  your price : ";
     cin >> originalprice;
 
-    cout << "Please enter discout price of product : ";
+    cout << "Please enter discout price of product (%): ";
     cin >> disrate;
 
-    if (originalprice < 0 ||  0 > disrate || disrate > 100){
+    if (originalprice <= 0 ||  0 > disrate || disrate > 100){
         cout << "This is not ERROR  calculate "<< endl;
     }
     else {
