@@ -11,8 +11,8 @@ int main() {
    
    for( int i = 0 ; i < 5 ; i++){
        
-       int count = amount / banknotes[i];
-       amount %= banknotes[i];
+       int count = amount / banknotes[i];//find amount
+       amount %= banknotes[i]; //manage amount leaf after get the banknotes
        
        for(int j = 0 ; j < count ; j ++){
            if(!first) cout << " ";
