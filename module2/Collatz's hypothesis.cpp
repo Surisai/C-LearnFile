@@ -23,9 +23,9 @@ int main(void) {
             c0 = 3 * c0 + 1;//add
         }
         cout << c0 <<endl;
-        steps++;
+        step++;
        
     }
-    cout << "Steps = " << steps <<endl;
+    cout << "Steps = " << step <<endl;
     return 0 ;
 }
