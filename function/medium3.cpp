@@ -51,49 +51,70 @@ int dayOfYear(Date date){
    
 }
 
-int daysBetween(Date d1, Date d2){
-    //initiallize counters
-    int total1 = 0;
-    int total2 = 0;
-//calculate total days for d1
-    // for(int y = 0 ; y < d1.year -1; y++ ){
-    //     if (isLeap(y)){
-    //         total1 += 366;
-    //     }else {
-    //         total1 += 365;
-    //     }
-    // }
-    // total1 += dayOfYear(d1);
-    for(int y = 1; y < d1.year; y++){
-        total1 += isLeap(y) ? 366: 365;
-    }
-    total1 += dayOfYear(d1);
+// int daysBetween(Date d1, Date d2){
+//     //initiallize counters
+//     int total1 = 0;
+//     int total2 = 0;
+// //calculate total days for d1
+//     // for(int y = 0 ; y < d1.year -1; y++ ){
+//     //     if (isLeap(y)){
+//     //         total1 += 366;
+//     //     }else {
+//     //         total1 += 365;
+//     //     }
+//     // }
+//     // total1 += dayOfYear(d1);
+//     for(int y = 1; y < d1.year; y++){
+//         total1 += isLeap(y) ? 366: 365;
+//     }
+//     total1 += dayOfYear(d1);
 
-//calculate total for days for d2
-    // for(int y = 0; y < d2.year-1 ; y++){
-    //      if (isLeap(y)){
-    //         total2 += 366;
-    //     }else {
-    //         total2 += 365;
-    //     }
-    // }
-    // total2 += dayOfYear(d2);
-    for(int y = 1 ; y < d2.year; y++){
-        total2 += isLeap(y) ? 366: 365;
-    }
-    total2 += dayOfYear(d2);
+// //calculate total for days for d2
+//     // for(int y = 0; y < d2.year-1 ; y++){
+//     //      if (isLeap(y)){
+//     //         total2 += 366;
+//     //     }else {
+//     //         total2 += 365;
+//     //     }
+//     // }
+//     // total2 += dayOfYear(d2);
+//     for(int y = 1 ; y < d2.year; y++){
+//         total2 += isLeap(y) ? 366: 365;
+//     }
+//     total2 += dayOfYear(d2);
 
-    //difference
-    int diff = total2-total1;
+//     //difference
+//     int diff = total2-total1;
 
-    if(diff < 0){
+//     if(diff < 0){
+//         return -1;
+//     }else{
+//         return diff;
+//     }
+
+// }
+int dayBetween(Date d1 , Date d2){
+    //check year
+    if(d1.year > d2.year){
         return -1;
-    }else{
-        return diff;
     }
+    if(d1.year == d2.year){
+        //cheak month
+        if(d1.month > d2.month){
+            return -1;
+        }
+        if(d1.month == d2.month){
+            //check days
+            if(d1.day > d2.day){
+                return -1;
+            }
+            return d2.day-d1.day;
+        }
+        return dayOfYear(d2) - dayOfYear(d1);
+    }
+    int days;
 
 }
-
 int main(){
 
     Date d;
