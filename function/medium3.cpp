@@ -110,9 +110,24 @@ int dayBetween(Date d1 , Date d2){
             }
             return d2.day-d1.day;
         }
+        //use function day calculate
         return dayOfYear(d2) - dayOfYear(d1);
     }
     int days;
+
+    Date Dec31 = {d1.year, 12,31};
+    days = dayOfYear(Dec31) - dayOfYear(d1);
+    //sum up all days in all intermediary years
+    for(int yr = d1.year +1 ; yr < d2.year ; yr++){
+        if(isLeap(yr)){
+            days += 366;
+        }
+        else{
+            days += 365;
+        }
+        days += dayOfYear(d2);
+        return days;
+    }
 
 }
 int main(){
